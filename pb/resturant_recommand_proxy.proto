@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/helloworld/helloworld";
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+package pb;
+
+service Recommand {
+    rpc  GetUserLikeDish(GetUserLikeDishReq) returns (GetUserLikeDishReq) {}
+}
+
+message GetUserLikeDishReq {
+    string username = 1;
+    string password = 2;
+}
+
+message GetUserLikeDishRsp {
+    int32 ret = 1;
+    repeated Dish dishes = 2;
+}
+
+message Dish {
+}
